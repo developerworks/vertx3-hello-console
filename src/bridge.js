@@ -10,10 +10,10 @@ var options = {
 var sockJSHandler = SockJSHandler.create(vertx).bridge(options, function (be) {
   if (be.type() !== 'SOCKET_CREATED' && be.type() !== 'SOCKET_CLOSED') {
     console.log(be.getRawMessage().body)
-    be.complete(true);
   } else {
     console.log(be.type)
   }
+  be.complete(true);
 });
 router.route("/eventbus/*").handler(sockJSHandler.handle);
 vertx.createHttpServer().requestHandler(router.accept).listen(8080, function () {

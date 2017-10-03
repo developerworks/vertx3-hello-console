@@ -20,8 +20,10 @@
       });
 
       // send a message
-      eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
-
+      // eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
+      eb.send('my_message_address', { 'action': 'say', 'message': 'Hello World!' }, function (reply) {
+        console.log("receive message: " + JSON.stringify(reply));
+      });
     }
   </script>
 </head>
