@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vertx/3.4.1/vertx-eventbus.js'></script>
+
+  <script>
+    var eb = new EventBus('http://localhost:8080/eventbus');
+
+    eb.onopen = function () {
+
+      // set a handler to receive a message
+      eb.registerHandler('my_message_address', function (error, message) {
+        console.log('received a message: ' + JSON.stringify(message));
+      });
+
+      // send a message
+      eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
+
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

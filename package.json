@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "name": "vertx3-hello-console",
+  "private": true,
+  "dependencies": {
+    "vertx3-full": "3.4.2"
+  },
+  "scripts": {
+    "world": "./node_modules/.bin/vertx run ./src/world.js",
+    "http": "./node_modules/.bin/vertx run ./src/http.js",
+    "tcp": "./node_modules/.bin/vertx run ./src/tcp.js",
+    "web": "./node_modules/.bin/vertx run ./src/web.js",
+    "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
+    "bridge": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/bridge.js"
+  }
+}
