@@ -7,21 +7,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vertx/3.4.1/vertx-eventbus.js'></script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vertx/3.4.2/vertx-eventbus.js"></script>
   <script>
-    var eb = new EventBus('http://localhost:8080/eventbus');
+    var eb = new EventBus('http://localhost:8080/eventbus', {
+      vertxbus_ping_interval: 1000
+    });
 
     eb.onopen = function () {
 
       // set a handler to receive a message
-      eb.registerHandler('my_message_address', function (error, message) {
+      eb.registerHandler('clients', function (error, message) {
         console.log('received a message: ' + JSON.stringify(message));
       });
+      eb.registerHandler('ping-client', function (error, message) {
+        console.log('pong', JSON.stringify(message))
+      })
 
       // send a message
       // eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
-      eb.send('my_message_address', { 'action': 'say', 'message': 'Hello World!' }, function (reply) {
+      eb.send('server', { 'action': 'say', 'message': 'Hello World!' }, function (reply) {
         console.log("receive message: " + JSON.stringify(reply));
       });
     }
