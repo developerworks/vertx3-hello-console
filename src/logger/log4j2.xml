@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="log-pattern">%d{yyyy-MM-dd HH:mm:ss} |- %highlight{%5p}{TRACE=blue, DEBUG=green, INFO=green, WARN=yellow, ERROR=red, FATAL=red} in %style{%C{1}:%L}{cyan} [%style{%t}{magenta}] - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${log-pattern}" />
+        </Console>
+        <RollingRandomAccessFile name="FILE" fileName="logs/app.log" append="true" filePattern="logs/lsp_app.log.%d{yyyyMMdd}">
+            <PatternLayout>
+                <Pattern>%d %-5p [%c] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy  interval="24"  modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+
+    <Loggers>
+        <AsyncLogger name="com.test" level="DEBUG" additivity="false" includeLocation="true">
+            <AppenderRef ref="Console" />
+
+        </AsyncLogger>
+
+        <Root level="WARN">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

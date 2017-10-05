@@ -12,6 +12,8 @@
     "web": "./node_modules/.bin/vertx run ./src/web.js",
     "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
     "bridge": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/bridge.js",
-    "chat": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/chat.js"
+    "chat": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/chat.js",
+    "db": "./node_modules/.bin/vertx run --redeploy=./src/database/*.js --launcher-class=io.vertx.core.Launcher ./src/database/db.js",
+    "logger": "./node_modules/.bin/vertx run --redeploy=./src/logger/*.js --launcher-class=io.vertx.core.Launcher ./src/logger/index.js"
   }
 }

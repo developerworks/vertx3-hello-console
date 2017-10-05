@@ -1,0 +1,7 @@
+{
+  "jdbcUrl": "",
+  "driverClassName": "",
+  "maximumPoolSize": 20,
+  "username": "root",
+  "password": "root"
+}

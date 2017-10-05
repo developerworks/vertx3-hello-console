@@ -1,0 +1,13 @@
+{
+  "provider_class": "io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider",
+  "row_stream_fetch_size": 128,
+  "url": "jdbc:mysql://localhost:3306/hierarchy_data",
+  "driver_class": "com.mysql.jdbc.Driver",
+  "user": "root",
+  "password": "root",
+  "max_pool_size": 15,
+  "min_pool_size": 1,
+  "max_statements": 0,
+  "max_statements_per_connection": 0,
+  "max_idle_time": 0
+}

@@ -6,7 +6,7 @@ var router = Router.router(vertx);
 var options = {
   "outboundPermitteds": [{ "address": "clients" }],
   "inboundPermitteds": [{ "address": "server" }],
-  "pingTimeout": 3000,     // PING超时, 如果60秒内服务器没有收到客户的PING消息, 则认为客户端断开连接.
+  "pingTimeout": 3000,      // PING超时, 如果60秒内服务器没有收到客户的PING消息, 则认为客户端断开连接.
   "heartbeatInterval": 1000 // 客户端向服务器发送PING消息的间隔
 };
 var sockJSHandler = SockJSHandler.create(vertx).bridge(options, function (be) {
