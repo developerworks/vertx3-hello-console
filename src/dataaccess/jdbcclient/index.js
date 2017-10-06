@@ -1,4 +1,6 @@
-/// <reference path="../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
+/// <reference path="../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
+
+var logger = require("../../logger/index").logger
 
 var JDBCClient = require("vertx-jdbc-js/jdbc_client");
 var client = JDBCClient.createShared(vertx, {
@@ -14,11 +16,13 @@ var client = JDBCClient.createShared(vertx, {
   "max_statements_per_connection": 10,
   "max_idle_time": 0
 }, "MyDataSource");
+
 client.getConnection(function (connection, connection_err) {
   if (connection_err == null) {
     connection.query("SELECT id,nickname FROM wechat_user LIMIT 1", function (result, query_error) {
       if (query_error == null) {
-        console.log(result.rows)
+        // console.log(result.rows)
+        logger.info("Result rows: {0}", JSON.stringify(result.rows))
       }
       else {
         // Query error

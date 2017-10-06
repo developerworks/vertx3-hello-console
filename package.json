@@ -13,7 +13,11 @@
     "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
     "bridge": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/bridge.js",
     "chat": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/chat.js",
-    "db": "./node_modules/.bin/vertx run --redeploy=./src/database/*.js --launcher-class=io.vertx.core.Launcher ./src/database/db.js",
-    "logger": "./node_modules/.bin/vertx run --redeploy=./src/logger/*.js --launcher-class=io.vertx.core.Launcher ./src/logger/index.js"
+    "dataaccess:jdbcclient": "./scripts/dataaccess/jdbcclient.sh",
+    "microservices:config": "./scripts/microservices/config.sh",
+    "core:filesystem": "./scripts/core/filesystem.sh",
+    "core:shared_data": "./scripts/core/shared_data.sh",
+    "core:logging": "./scripts/core/logging.sh",
+    "core:dns-client": "./scripts/core/dns-client.sh"
   }
 }
