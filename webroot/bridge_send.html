@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vertx/3.4.2/vertx-eventbus.js"></script>
+  <script>
+    var eb = new EventBus('http://localhost:8080/eventbus/', {
+      vertxbus_ping_interval: 1000
+    });
+
+    eb.onopen = function () {
+
+      // set a handler to receive a message
+      eb.registerHandler('game.clients', function (error, message) {
+        console.log('received a message type: ' + JSON.stringify(message.type));
+        console.log('received a message address: ' + JSON.stringify(message.address));
+        console.log('received a message replyAddress: ' + JSON.stringify(message.replyAddress));
+        console.log('received a message headers: ' + JSON.stringify(message.headers));
+        console.log('received a message body: ' + JSON.stringify(message.body));
+      });
+      // eb.registerHandler('ping-client', function (error, message) {
+      //   console.log('pong', JSON.stringify(message))
+      // })
+
+      // send a message
+      // eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
+      var jsonobject = {
+        action: 'say',
+        message: 'Hello World!'
+      }
+      eb.send('game.server', JSON.stringify(jsonobject), function (reply) {
+        console.log("reply message: " + JSON.stringify(reply));
+      });
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

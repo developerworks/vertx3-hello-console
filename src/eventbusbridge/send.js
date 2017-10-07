@@ -1,7 +1,6 @@
 /// <reference path="../../typings/vertx-js/vertx.d.ts" />
 
 var logger = require("../core/logging/index").logger
-
 var Router = require("vertx-web-js/router");
 var SockJSHandler = require("vertx-web-js/sock_js_handler");
 var StaticHandler = require("vertx-web-js/static_handler");
@@ -25,15 +24,19 @@ vertx
   .createHttpServer()
   .requestHandler(router.accept)
   .listen(8080, function () {
-    console.log('Eventbus bridge server is listen on http://localhost:8080')
+    logger.info('Eventbus bridge server is listen on http://localhost:8080')
   });
 
 var eb = vertx.eventBus();
 eb.consumer("game.server").handler(function (message) {
-  logger.info("received message: {0}", JSON.stringify(message.body()))
-  eb.publish("game.clients", message.body());
+  logger.info("received message type: {0}", message.type)
+  logger.info("received message address: {0}", message.address())
+  logger.info("received message replyAddress: {0}", message.replyAddress())
+  logger.info("received message headers: {0}", JSON.stringify(message.headers))
+  logger.info("received message: {0}", JSON.stringify(JSON.parse(message.body())))
+  eb.send("game.clients", JSON.parse(message.body()));
 });
 // eb.consumer("ping-server").handler(function (message) {
-//   console.log(message.body());
+//   logger.info(message.body());
 //   eb.publish("ping-client", message.body());
 // })

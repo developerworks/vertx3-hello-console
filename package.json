@@ -14,6 +14,7 @@
     "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
     "eventbusbridge:client": "./scripts/eventbusbridge/client.sh",
     "eventbusbridge:chat": "./scripts/eventbusbridge/chat.sh",
+    "eventbusbridge:send": "./scripts/eventbusbridge/send.sh",
     "dataaccess:jdbcclient": "./scripts/dataaccess/jdbcclient.sh",
     "microservices:config": "./scripts/microservices/config.sh",
     "core:filesystem": "./scripts/core/filesystem.sh",
