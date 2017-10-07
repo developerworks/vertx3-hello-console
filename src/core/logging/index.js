@@ -37,8 +37,3 @@ var logger = Java.type("io.vertx.core.logging.LoggerFactory").getLogger("poker")
 // );
 
 exports.logger = logger
-
-
-exports.vertxStop = function () {
-
-}

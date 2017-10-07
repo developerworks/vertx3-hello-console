@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
 
-var logger = require("../../logger/index").logger
+var logger = require("../../core/logging/index").logger
 
 var JDBCClient = require("vertx-jdbc-js/jdbc_client");
 var client = JDBCClient.createShared(vertx, {
@@ -34,3 +34,11 @@ client.getConnection(function (connection, connection_err) {
   }
 })
 
+
+exports.vertxStart = function () {
+
+}
+
+exports.vertxStop = function () {
+
+}

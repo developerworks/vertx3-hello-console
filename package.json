@@ -3,7 +3,8 @@
   "name": "vertx3-hello-console",
   "private": true,
   "dependencies": {
-    "vertx3-full": "3.4.2"
+    "vertx3-eventbus-client": "^3.4.2",
+    "vertx3-full": "^3.4.2"
   },
   "scripts": {
     "world": "./node_modules/.bin/vertx run ./src/world.js",
@@ -11,13 +12,15 @@
     "tcp": "./node_modules/.bin/vertx run ./src/tcp.js",
     "web": "./node_modules/.bin/vertx run ./src/web.js",
     "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
-    "bridge": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/bridge.js",
-    "chat": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/chat.js",
+    "eventbusbridge:client": "./scripts/eventbusbridge/client.sh",
+    "eventbusbridge:chat": "./scripts/eventbusbridge/chat.sh",
     "dataaccess:jdbcclient": "./scripts/dataaccess/jdbcclient.sh",
     "microservices:config": "./scripts/microservices/config.sh",
     "core:filesystem": "./scripts/core/filesystem.sh",
     "core:shared_data": "./scripts/core/shared_data.sh",
     "core:logging": "./scripts/core/logging.sh",
-    "core:dns-client": "./scripts/core/dns-client.sh"
+    "core:dns-client": "./scripts/core/dns-client.sh",
+    "devops:healthcheck": "./scripts/devops/healthcheck.sh",
+    "systeminfo": "./scripts/systeminfo.sh"
   }
 }

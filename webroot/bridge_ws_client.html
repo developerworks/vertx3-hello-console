@@ -9,23 +9,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/vertx/3.4.2/vertx-eventbus.js"></script>
   <script>
-    var eb = new EventBus('http://localhost:8080/eventbus', {
+    var eb = new EventBus('http://localhost:8080/eventbus/', {
       vertxbus_ping_interval: 1000
     });
 
     eb.onopen = function () {
 
       // set a handler to receive a message
-      eb.registerHandler('clients', function (error, message) {
-        console.log('received a message: ' + JSON.stringify(message));
+      eb.registerHandler('game.clients', function (error, message) {
+        console.log('received a message: ' + JSON.stringify(message.body));
       });
-      eb.registerHandler('ping-client', function (error, message) {
-        console.log('pong', JSON.stringify(message))
-      })
+      // eb.registerHandler('ping-client', function (error, message) {
+      //   console.log('pong', JSON.stringify(message))
+      // })
 
       // send a message
       // eb.send('my_message_address', { name: '元气糯米团子', age: 587 });
-      eb.send('server', { 'action': 'say', 'message': 'Hello World!' }, function (reply) {
+      var jsonobject = {
+        action: 'say',
+        message: 'Hello World!'
+      }
+      eb.publish('game.server', JSON.stringify(jsonobject), function (reply) {
         console.log("receive message: " + JSON.stringify(reply));
       });
     }
