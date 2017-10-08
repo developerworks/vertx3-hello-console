@@ -1,38 +1,55 @@
 /// <reference path="../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
 
 var logger = require("../../core/logging/index").logger
-
+var ConfigRetriever = require("vertx-config-js/config_retriever");
+var options = {
+  "stores": [{
+    "type": "file",   // event-bus, http, sys, env, json, file, directory
+    "format": "json", // properties
+    "config": {
+      "path": "./src/dataaccess/jdbcclient/config.json"
+    }
+  }]
+};
+var retriever = ConfigRetriever.create(vertx, options);
 var JDBCClient = require("vertx-jdbc-js/jdbc_client");
-var client = JDBCClient.createShared(vertx, {
-  "provider_class": "io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider",
-  "row_stream_fetch_size": 128,
-  "url": "jdbc:mysql://localhost:3306/hierarchy_data?useSSL=false",
-  "driver_class": "com.mysql.jdbc.Driver",
-  "user": "root",
-  "password": "root",
-  "max_pool_size": 15,
-  "min_pool_size": 1,
-  "max_statements": 100,
-  "max_statements_per_connection": 10,
-  "max_idle_time": 0
-}, "MyDataSource");
 
-client.getConnection(function (connection, connection_err) {
-  if (connection_err == null) {
-    connection.query("SELECT id,nickname FROM wechat_user LIMIT 1", function (result, query_error) {
-      if (query_error == null) {
-        // console.log(result.rows)
-        logger.info("Result rows: {0}", JSON.stringify(result.rows))
+retriever.getConfig(function (config, ar_err) {
+  if (ar_err != null) {
+    // Failed to retrieve the configuration
+    logger.error("Error: failed to get database configurations {0}", ar_err)
+  } else {
+    // logger.info(JSON.stringify(config))
+    // logger.info('host {0}', config.host)
+    // logger.info('port {0}', config.port) // 端口号使用String类型, 如果是Int类型, 打印出来是 3,306这种格式, 端口号不用于数值计算, 因此在配置文件中使用字符串.
+    // logger.info('username {0}', config.username)
+    // logger.info('password {0}', config.password)
+    // Object.keys(config).map(function (key) {
+    //   logger.info("{0} = {1}", key, config[key])
+    // })
+    var client = JDBCClient.createShared(vertx, config, "MyDataSource");
+
+    client.getConnection(function (connection, connection_err) {
+      if (connection_err == null) {
+        connection.query("SELECT id,nickname FROM wechat_user LIMIT 1", function (result, query_error) {
+          if (query_error == null) {
+            // console.log(result.rows)
+            logger.info("Result rows: {0}", JSON.stringify(result.rows))
+          }
+          else {
+            // Query error
+          }
+        })
       }
       else {
-        // Query error
+        console.error('建立数据库连接错误 %s', connection_err)
       }
     })
   }
-  else {
-    console.error('建立数据库连接错误 %s', connection_err)
-  }
-})
+});
+
+
+
 
 
 exports.vertxStart = function () {
