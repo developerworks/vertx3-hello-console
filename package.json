@@ -3,6 +3,7 @@
   "name": "vertx3-hello-console",
   "private": true,
   "dependencies": {
+    "rx": "^4.1.0",
     "vertx3-eventbus-client": "^3.4.2",
     "vertx3-full": "^3.4.2"
   },
@@ -24,6 +25,7 @@
     "core:timer": "./scripts/core/timer.sh",
     "core:dns-client": "./scripts/core/dns-client.sh",
     "devops:healthcheck": "./scripts/devops/healthcheck.sh",
-    "systeminfo": "./scripts/systeminfo.sh"
+    "systeminfo": "./scripts/systeminfo.sh",
+    "rx:readfile": "./scripts/rx/readfile.sh"
   }
 }

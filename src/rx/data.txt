@@ -1,0 +1,6 @@
+= Vert.x RxJava extension examples
+
+Here you will find examples demonstrating Vert.x RxJava extension in action.
+
+Vert.x RxJava extension provides Rxified version of the Vert.x APIs. Please consult the Vert.x RxJava manual
+for detailed documentation on Vert.x core.
