@@ -21,6 +21,7 @@
     "core:shared_data": "./scripts/core/shared_data.sh",
     "core:logging": "./scripts/core/logging.sh",
     "core:buffer": "./scripts/core/buffer.sh",
+    "core:timer": "./scripts/core/timer.sh",
     "core:dns-client": "./scripts/core/dns-client.sh",
     "devops:healthcheck": "./scripts/devops/healthcheck.sh",
     "systeminfo": "./scripts/systeminfo.sh"

@@ -1,0 +1,10 @@
+{
+  "main": "com.mycompany.cleverdb.MainVerticle",
+  "options": {
+    "config": {
+      "foo": "bar"
+    },
+    "worker": true,
+    "isolationGroup": "mygroup"
+  }
+}

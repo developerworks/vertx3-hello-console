@@ -32,7 +32,7 @@ eb.consumer("game.server").handler(function (message) {
   logger.info("received message type: {0}", message.type)
   logger.info("received message address: {0}", message.address())
   logger.info("received message replyAddress: {0}", message.replyAddress())
-  logger.info("received message headers: {0}", JSON.stringify(message.headers))
+  logger.info("received message headers: {0}", JSON.stringify(message.headers()))
   logger.info("received message: {0}", JSON.stringify(JSON.parse(message.body())))
   eb.send("game.clients", JSON.parse(message.body()));
 });
