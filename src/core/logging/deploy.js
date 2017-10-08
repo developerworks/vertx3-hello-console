@@ -26,7 +26,7 @@ var PROJECT_DIR = Java.type("java.lang.System").getProperty("user.dir");
 // logger.info(PROJECT_DIR + "/src/conf/logging.properties")
 
 
-vertx.deployVerticle(PROJECT_DIR + "/src/core/logging/test.js", {
+vertx.deployVerticle("test.js", {
   // 传递给被部署的Verticle选项
   "config": {
     "project_dir": PROJECT_DIR
