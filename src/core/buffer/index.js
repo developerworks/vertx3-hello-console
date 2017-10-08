@@ -1,5 +1,7 @@
 /**
- * 参考资料: http://vertx.io/docs/jsdoc/module-vertx-js_buffer.html
+ * 参考资料:
+ * 1. http://vertx.io/docs/jsdoc/module-vertx-js_buffer.html
+ * 2. http://tutorials.jenkov.com/vert.x/buffers.html
  * 运行命令: yarn core:buffer
  */
 
