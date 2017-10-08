@@ -3,4 +3,7 @@
 export CLASSPATH=./src/conf
 export CLASSPATH=$CLASSPATH:./src/main/resources
 
-./node_modules/.bin/vertx run --redeploy=./src/core/shared_data/*.js --launcher-class=io.vertx.core.Launcher ./src/core/shared_data/index.js
+RUN="./node_modules/.bin/vertx run"
+JAVA_OPT="-Duser.language=en -Duser.country=US -Duser.variant=en_US"
+
+${RUN} --java-opts=${JAVA_OPT} ${LAUNCHER} --launcher-class=io.vertx.core.Launcher --redeploy=./src/core/shared_data/*.js ./src/core/shared_data/index.js

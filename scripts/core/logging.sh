@@ -2,6 +2,8 @@
 
 export CLASSPATH=./src/conf
 export CLASSPATH=$CLASSPATH:./src/main/resources
-export CLASSPATH=$CLASSPATH:./src/core/logging
 
-./node_modules/.bin/vertx run --redeploy=./src/core/logging/*.js --launcher-class=io.vertx.core.Launcher ./src/core/logging/deploy.js
+RUN="./node_modules/.bin/vertx run"
+JAVA_OPT="-Duser.language=en -Duser.country=US -Duser.variant=en_US"
+
+${RUN} --java-opts=${JAVA_OPT} ${LAUNCHER} --launcher-class=io.vertx.core.Launcher --redeploy=./src/core/logging/*.js ./src/core/logging/index.js
