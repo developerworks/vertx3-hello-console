@@ -1,3 +1,5 @@
+/// <reference path="../../../../typings/vertx-js/vertx.d.ts" />
+
 var TcpEventBusBridge = require("vertx-tcp-eventbus-bridge-js/tcp_event_bus_bridge");
 
 var bridge = TcpEventBusBridge.create(vertx, {

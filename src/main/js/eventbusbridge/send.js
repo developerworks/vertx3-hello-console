@@ -1,4 +1,4 @@
-/// <reference path="../../typings/vertx-js/vertx.d.ts" />
+/// <reference path="../../../../typings/vertx-js/vertx.d.ts" />
 
 var logger = require("../core/logging/index").logger
 var Router = require("vertx-web-js/router");

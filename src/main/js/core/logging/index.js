@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 // 获取Context对象的两种方式
 // 一. Vertx.currentContext().config()     其中 Vertx 首字母大写
 // 二. vertx.getOrCreateContext().config() 其中 vertx 首字母小写

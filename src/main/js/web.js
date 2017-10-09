@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/vertx-js/vertx.d.ts" />
+
 var Router = require("vertx-web-js/router");
 var server = vertx.createHttpServer();
 

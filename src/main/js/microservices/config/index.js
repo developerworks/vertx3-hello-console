@@ -1,3 +1,5 @@
+/// <reference path="../../../../typings/vertx-js/vertx.d.ts" />
+
 var ConfigRetriever = require("vertx-config-js/config_retriever");
 var logger = require("../../core/logging/index").logger
 var httpStore = {

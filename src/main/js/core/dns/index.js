@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 // JVM内置的DNS解析是阻塞式的.
 // 这里我们使用Vertx提供的非阻塞式的方式来解析IP地址
 

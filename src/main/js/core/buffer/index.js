@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 /**
  * 参考资料:
  * 1. http://vertx.io/docs/jsdoc/module-vertx-js_buffer.html

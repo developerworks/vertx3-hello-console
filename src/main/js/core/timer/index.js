@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/vertx-js/vertx.d.ts" />
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
 /**
  * 参考资料:
  *

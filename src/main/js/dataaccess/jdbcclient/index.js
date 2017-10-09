@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
 
 var logger = require("../../core/logging/index").logger
 var ConfigRetriever = require("vertx-config-js/config_retriever");

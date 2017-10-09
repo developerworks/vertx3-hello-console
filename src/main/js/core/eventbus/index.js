@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 var Vertx = require("vertx-js/vertx");
 var options = {
   "eventBusOptions": {
