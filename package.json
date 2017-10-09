@@ -28,7 +28,8 @@
     "core:dns-client": "./scripts/core/dns-client.sh",
     "devops:healthcheck": "./scripts/devops/healthcheck.sh",
     "systeminfo": "./scripts/systeminfo.sh",
-    "rx:readfile": "./scripts/rx/readfile.sh"
+    "rx:readfile": "./scripts/rx/readfile.sh",
+    "deploy:java_verticle": "./scripts/deploy/java-verticle.sh"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

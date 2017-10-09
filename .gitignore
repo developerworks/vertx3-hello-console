@@ -3,3 +3,5 @@ target
 yarn-error.log
 .vertx
 logs
+.vscode
+.settings
