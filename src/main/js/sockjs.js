@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/vertx-js/vertx.d.ts" />
+
 // var Router = require("vertx-web-js/router");
 // var SockJSHandler = require("vertx-web-js/sock_js_handler");
 // var router = Router.router(vertx);

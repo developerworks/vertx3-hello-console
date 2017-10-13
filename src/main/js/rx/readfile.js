@@ -1,3 +1,5 @@
+/// <reference path="../../../../typings/vertx-js/vertx.d.ts" />
+
 var Rx = require("rx.vertx");
 var fs = vertx.fileSystem();
 fs.open("/Users/hezhiqiang/totoro/_vertx-projects/vertx3-hello-console/src/rx/data.txt", {}, function (result, err) {

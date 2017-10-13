@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 var logger = require("../logging/index").logger
 
 var client = vertx.createDnsClient(53, "8.8.8.8")

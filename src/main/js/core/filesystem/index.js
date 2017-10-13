@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 var fs = vertx.fileSystem();
 
 // Copy file from foo.txt to bar.txt

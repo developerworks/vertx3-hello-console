@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 var logger = require("../../logger/index").logger
 exports.vertxStart = function () {
   // 导入日志对象

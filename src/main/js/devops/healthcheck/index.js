@@ -1,3 +1,5 @@
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
+
 var health_check_handler = require("vertx-health-checks-js/health_check_handler");
 var HealthChecks = require("vertx-health-checks-js/health_checks");
 var Router = require("vertx-web-js/router");

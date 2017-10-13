@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/vertx-js/vertx.d.ts" />
+
 vertx.createHttpServer().requestHandler(function (req) {
   req.response()
     .putHeader("content-type", "text/plain")
