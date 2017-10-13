@@ -19,6 +19,8 @@
     "eventbusbridge:chat": "./scripts/eventbusbridge/chat.sh",
     "eventbusbridge:send": "./scripts/eventbusbridge/send.sh",
     "dataaccess:jdbcclient": "./scripts/dataaccess/jdbcclient.sh",
+    "dataaccess:mysql": "./scripts/dataaccess/mysql.sh",
+    "dataaccess:java-test": "./scripts/dataaccess/java-test.sh",
     "microservices:config": "./scripts/microservices/config.sh",
     "core:filesystem": "./scripts/core/filesystem.sh",
     "core:shared_data": "./scripts/core/shared_data.sh",

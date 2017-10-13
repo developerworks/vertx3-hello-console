@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
+/// <reference path="../../../../../typings/vertx-jdbc-js/jdbc_client.d.ts" />
 
 var logger = require("../../core/logging/index").logger
 var ConfigRetriever = require("vertx-config-js/config_retriever");
@@ -7,7 +7,7 @@ var options = {
     "type": "file",   // event-bus, http, sys, env, json, file, directory
     "format": "json", // properties
     "config": {
-      "path": "./src/dataaccess/jdbcclient/config.json"
+      "path": "./src/main/js/dataaccess/jdbcclient/config.json"
     }
   }]
 };

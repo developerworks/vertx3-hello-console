@@ -29,6 +29,21 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-mysql-postgresql-client</artifactId>
+      <version>3.4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.mauricio</groupId>
+      <artifactId>postgresql-async_2.11</artifactId>
+      <version>0.2.21</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.mauricio</groupId>
+      <artifactId>mysql-async_2.11</artifactId>
+      <version>0.2.21</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>java-verticle</finalName>
