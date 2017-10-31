@@ -1,8 +1,29 @@
-/// <reference path="../../../../typings/vertx-js/vertx.d.ts" />
+/// <reference path="../../../../../typings/vertx-js/vertx.d.ts" />
 
 var ConfigRetriever = require("vertx-config-js/config_retriever");
 var logger = require("../../core/logging/index").logger
-var httpStore = {
+
+
+var KubernetesConfigMapStore = {
+  "type": "configmap",
+  "config": {
+    "namespace": "my-project-namespace",
+    "name": "configmap-name"
+  }
+};
+
+var GitStore = {
+  "type": "git",
+  "config": {
+    "url": "https://github.com/cescoffier/vertx-config-test.git",
+    "path": "local",
+    "filesets": [{
+      "pattern": "*.json"
+    }]
+  }
+};
+
+var HttpStore = {
   "type": "http",
   "config": {
     "host": "localhost",
@@ -11,25 +32,25 @@ var httpStore = {
   }
 };
 
-
 // 文件路径可以使基于当前启动目录的相对目录
-var fileStore = {
+var FileStore = {
   "type": "file",
   "config": {
     "path": "./src/microservices/config/mysql-config.json"
   }
 };
 
-var sysPropsStore = {
+var SysPropsStore = {
   "type": "sys"
 };
 
 
 var options = {
   "stores": [
-    // httpStore,
-    fileStore,
-    // sysPropsStore
+    // HttpStore,
+    FileStore,
+    // SysPropsStore,
+    // GitStore
   ]
 };
 

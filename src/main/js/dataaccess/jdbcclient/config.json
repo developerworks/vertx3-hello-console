@@ -1,7 +1,7 @@
 {
   "provider_class": "io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider",
   "row_stream_fetch_size": 128,
-  "url": "jdbc:mysql://localhost:3306/hierarchy_data?useSSL=false",
+  "url": "jdbc:mysql://localhost:3306/testdb?useSSL=false",
   "driver_class": "com.mysql.jdbc.Driver",
   "user": "root",
   "password": "root",

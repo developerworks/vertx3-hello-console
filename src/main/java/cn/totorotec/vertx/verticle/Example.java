@@ -1,7 +1,6 @@
 package cn.totorotec.vertx.verticle;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;

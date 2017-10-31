@@ -10,7 +10,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/vertx/3.4.2/vertx-eventbus.js"></script>
   <script>
     var eb = new EventBus('http://localhost:8080/eventbus/', {
-      vertxbus_ping_interval: 1000
+      vertxbus_ping_interval: 60000
     });
 
     eb.onopen = function () {

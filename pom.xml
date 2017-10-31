@@ -10,7 +10,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <vertx.projectVersion>3.4.2</vertx.projectVersion>
+    <vertx.projectVersion>3.5.0</vertx.projectVersion>
     <fabric8-vertx-maven-plugin.projectVersion>1.0.13</fabric8-vertx-maven-plugin.projectVersion>
   </properties>
   <dependencyManagement>
@@ -43,6 +43,21 @@
       <groupId>com.github.mauricio</groupId>
       <artifactId>mysql-async_2.11</artifactId>
       <version>0.2.21</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-ecs</artifactId>
+      <version>4.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-rx-java2</artifactId>
+      <version>3.5.0</version>
     </dependency>
   </dependencies>
   <build>

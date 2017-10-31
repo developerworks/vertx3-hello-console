@@ -3,9 +3,10 @@
   "name": "vertx3-hello-console",
   "private": true,
   "dependencies": {
+    "qrcode": "^0.9.0",
     "rx": "^4.1.0",
-    "vertx3-eventbus-client": "^3.4.2",
-    "vertx3-full": "^3.4.2"
+    "vertx3-eventbus-client": "^3.5.0",
+    "vertx3-full": "^3.5.0"
   },
   "scripts": {
     "build": "./node_modules/.bin/babel --out-dir es6_out es6",
@@ -15,12 +16,15 @@
     "tcp": "./node_modules/.bin/vertx run ./src/tcp.js",
     "web": "./node_modules/.bin/vertx run ./src/web.js",
     "sockjs": "./node_modules/.bin/vertx run --redeploy=./src/*.js --launcher-class=io.vertx.core.Launcher ./src/sockjs.js",
+    "clustering:eventbus": "./scripts/clustering/eventbus.sh",
     "eventbusbridge:client": "./scripts/eventbusbridge/client.sh",
     "eventbusbridge:chat": "./scripts/eventbusbridge/chat.sh",
     "eventbusbridge:send": "./scripts/eventbusbridge/send.sh",
     "dataaccess:jdbcclient": "./scripts/dataaccess/jdbcclient.sh",
     "dataaccess:mysql": "./scripts/dataaccess/mysql.sh",
     "dataaccess:java-test": "./scripts/dataaccess/java-test.sh",
+    "dataaccess:eventbus": "./scripts/dataaccess/eventbus.sh",
+    "dataaccess:eventbus_client": "./scripts/dataaccess/eventbus_client.sh",
     "microservices:config": "./scripts/microservices/config.sh",
     "core:filesystem": "./scripts/core/filesystem.sh",
     "core:shared_data": "./scripts/core/shared_data.sh",
@@ -31,10 +35,13 @@
     "devops:healthcheck": "./scripts/devops/healthcheck.sh",
     "systeminfo": "./scripts/systeminfo.sh",
     "rx:readfile": "./scripts/rx/readfile.sh",
-    "deploy:java_verticle": "./scripts/deploy/java-verticle.sh"
+    "rx:timer": "./scripts/rx/timer.sh",
+    "deploy:java_verticle": "./scripts/deploy/java-verticle.sh",
+    "common:qrcode": "./scripts/common/qrcode.sh"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }

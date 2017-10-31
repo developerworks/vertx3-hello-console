@@ -13,7 +13,7 @@ var options = {
   "outboundPermitteds": [
     { "address": "game.clients" }
   ],
-  "pingTimeout": 3000,      // PING超时, 如果60秒内服务器没有收到客户的PING消息, 则认为客户端断开连接.
+  "pingTimeout": 90000,      // PING超时, 如果60秒内服务器没有收到客户的PING消息, 则认为客户端断开连接.
   "heartbeatInterval": 1000 // 客户端向服务器发送PING消息的间隔
 };
 var sockJSHandler = SockJSHandler.create(vertx).bridge(options);
@@ -33,8 +33,9 @@ eb.consumer("game.server").handler(function (message) {
   logger.info("received message address: {0}", message.address())
   logger.info("received message replyAddress: {0}", message.replyAddress())
   logger.info("received message headers: {0}", JSON.stringify(message.headers()))
-  logger.info("received message: {0}", JSON.stringify(JSON.parse(message.body())))
-  eb.send("game.clients", JSON.parse(message.body()));
+  logger.info("received message: {0}", message.body())
+  message.reply(message.body())
+  // eb.send("game.clients", message.body())
 });
 // eb.consumer("ping-server").handler(function (message) {
 //   logger.info(message.body());
